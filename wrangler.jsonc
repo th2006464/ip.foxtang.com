@@ -3,5 +3,5 @@
   "name": "foxtang-network-route-detection",
   "compatibility_date": "2026-09-11",
   "assets": { "directory": "./public", "html_handling": "auto-trailing-slash", "not_found_handling": "404-page" },
-  "routes": [{ "pattern": "ip.foxtang.com/*", "zone_name": "foxtang.com" }]
+  "routes": [{ "pattern": "ip.foxtang.com/detect*", "zone_name": "foxtang.com" }]
 }
