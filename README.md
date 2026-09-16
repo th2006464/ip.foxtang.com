@@ -1,6 +1,16 @@
-# 网络出口检测
+# IP 网络工具
 
-无需构建、没有自有后端的浏览器网络分流检测页面。它同时访问多类公开探针，展示不同目标域名实际看到的公网出口，并对国内/国际出口差异作保守提示。
+Cloudflare Workers Static Assets 项目，包含网络出口检测和 IP / 域名情报查询。首页同时访问多类公开探针，展示不同目标域名实际看到的公网出口，并对国内/国际出口差异作保守提示。
+
+## IP / 域名查询
+
+`/lookup/` 提供独立查询页，调用 Worker 的 `GET /api/query?q=...` 接口，支持 IPv4、IPv6、域名与 URL。Worker 使用 Cloudflare DNS over HTTPS 解析 DNS，并用 Cache API 缓存 DNS（10 分钟）和 GeoIP（7 天）结果；私有、保留及文档地址不会发送给第三方 GeoIP 服务。
+
+GeoIP 默认按 IPGEO / TechnikNews、`ipwho.is`、IPinfo 公共接口、GeoJS、`ip-api.com`、IPinfo Lite 的顺序降级。若配置了 IPinfo Token，在部署环境执行：
+
+```bash
+npx wrangler secret put IPINFO_TOKEN
+```
 
 - 在线地址：<https://ip.foxtang.com>
 - 技术栈：HTML、CSS、Vanilla JavaScript

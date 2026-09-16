@@ -1,6 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "foxtang-network-route-detection",
+  "name": "ip-foxtang-com",
+  "main": "src/worker.js",
   "compatibility_date": "2026-09-11",
   "assets": { "directory": "./public", "html_handling": "auto-trailing-slash", "not_found_handling": "404-page" },
   "routes": [{ "pattern": "ip.foxtang.com/*", "zone_name": "foxtang.com" }]
