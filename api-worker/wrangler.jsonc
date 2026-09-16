@@ -1,8 +1,0 @@
-{
-  "$schema": "../node_modules/wrangler/config-schema.json",
-  "name": "foxtang-ip-lookup-api",
-  "main": "worker.js",
-  "compatibility_date": "2026-09-11",
-  "compatibility_flags": ["nodejs_compat"],
-  "routes": [{ "pattern": "ip.foxtang.com/api*", "zone_name": "foxtang.com" }]
-}
